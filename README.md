@@ -35,6 +35,8 @@ cp deploy-gitverse.js project/scripts/deploy-gitverse.js
 ```
 ```bash
 npx hardhat --network localhost run scripts/deploy-gitverse.js
+or
+npx hardhat --network goerli run scripts/deploy-gitverse.js
 ```
 
 ### 3.3 edit gitScript.js

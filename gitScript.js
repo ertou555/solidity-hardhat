@@ -105,14 +105,16 @@ const chainMap = {
   },
 }
 
-const provider = new ethers.providers.JsonRpcProvider('http://127.0.0.1:8545', 31337)
+const ALCHEMY_API_KEY = "auV_BY2ZMutW9Q7uQj0P-QOkVgR8oEwy";
+// const provider = new ethers.providers.JsonRpcProvider('http://127.0.0.1:8545', 31337)
+const provider = new ethers.providers.AlchemyProvider("goerli", `${ALCHEMY_API_KEY}`)
 
 const privKey = process.env.PRIVATE_KEY
 // const privKeyBuffer = u8a.fromString(privKey);
 const privKeyBuffer = privKey
 
 const wallet = new ethers.Wallet(privKeyBuffer, provider);
-const contractAddress = '0x5fbdb2315678afecb367f032d93f642f64180aa3';
+const contractAddress = process.env.CONTRACT_ADDRESS;
 const contractWriter = new ethers.Contract(contractAddress, abi, wallet);
 
 const value = ethers.utils.parseEther('0.01');
@@ -122,5 +124,5 @@ const rc = await tx.wait()
 // const event = rc.events.find(event => event.event === 'AddPkg')
 // const rz = event.args
 // const tokenId = rz.tokenId.toString()
-console.log(`====> tokenId : https://mumbai.polygonscan.com/tx/${tx.hash}`)
+console.log(`====> tokenId : https://goerli.etherscan.io/tx/${tx.hash}`)
 await $`rm ${output_file_name}`
