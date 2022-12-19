@@ -118,7 +118,6 @@ const contractWriter = new ethers.Contract(contractAddress, abi, wallet);
 const value = ethers.utils.parseEther('0.01');
 const gasPrice = ethers.utils.parseUnits('50', 'gwei');
 const tx = await contractWriter.addPkg(_basicPrice, _inviteCommission, metadataCID, { value, gasPrice })
-console.log("tx===============", tx)
 const rc = await tx.wait()
 // const event = rc.events.find(event => event.event === 'AddPkg')
 // const rz = event.args
