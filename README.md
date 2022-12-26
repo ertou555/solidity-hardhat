@@ -28,7 +28,7 @@ npx hardhat compile
 npx hardhat test
 ```
 
-### 3.2 deploy contact to hardhat localhost network
+### 3.3 deploy contact to hardhat localhost network
 copy deploy-gitverse.js to hardhat project
 ```bash
 cp deploy-gitverse.js project/scripts/deploy-gitverse.js
@@ -39,10 +39,10 @@ or
 npx hardhat --network goerli run scripts/deploy-gitverse.js
 ```
 
-### 3.3 edit gitScript.js
+### 3.4 edit gitScript.js
 `contractAddress`
 
-### 3.4 edit abi.json
+### 3.5 edit abi.json
 
 ## Step4: tag your repo and run the cmd
 
